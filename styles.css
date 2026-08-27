@@ -620,3 +620,126 @@ body.is-locked { overflow: hidden; }
   .site-header, .site-footer, .btn, .modal { display: none !important; }
   body { font-size: 11pt; }
 }
+
+/* ==========================================================================
+   REVISIÓN 2 — hero con fotografía, WhatsApp, selector de trámite
+   ========================================================================== */
+
+/* ------------------------------------------------- Hero con fotografía --- */
+.hero--foto {
+  background: var(--brand-deep);
+  border-bottom: 0;
+  min-height: min(78vh, 620px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(4rem, 10vw, 7rem);
+}
+
+/* La imagen va aquí. Sustituye hero.jpg y no toques nada más.
+   Si el archivo no existe todavía, queda el degradado azul de fondo. */
+.hero--foto .hero__media {
+  position: absolute;
+  inset: 0;
+  background-color: var(--brand-deep);
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center 55%;
+  filter: saturate(.85);
+}
+
+/* Velo azul: garantiza que el texto blanco sea legible sobre CUALQUIER foto */
+.hero--foto .hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(0,43,78,.94) 0%, rgba(0,43,78,.86) 42%, rgba(0,43,78,.55) 100%);
+}
+
+.hero--foto .hero__inner { max-width: 46rem; }
+.hero--foto h1 { color: #fff; }
+.hero--foto .hero__role { color: #9FC6EC; }
+.hero--foto .hero__note { color: #C9DCEC; }
+
+.btn--light-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.55); }
+.btn--light-ghost:hover { background: #fff; color: var(--brand-deep); border-color: #fff; }
+
+@media (max-width: 700px) {
+  .hero--foto .hero__veil {
+    background: linear-gradient(180deg, rgba(0,43,78,.9) 0%, rgba(0,43,78,.93) 100%);
+  }
+}
+
+/* ------------------------------------------------- Selector de trámite --- */
+.field select {
+  font: inherit;
+  font-size: 1rem;
+  padding: .7rem .8rem;
+  border: 1px solid #B9C7D6;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  width: 100%;
+  appearance: none;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23005EB8' stroke-width='2'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right .8rem center;
+  background-size: 12px;
+  padding-right: 2.4rem;
+}
+.field select:focus { border-color: var(--brand); }
+#campo-banco[hidden] { display: none; }
+
+/* -------------------------------------------------------------- WhatsApp --- */
+.wa-fab {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .8rem 1.15rem;
+  border: 0;
+  border-radius: 999px;
+  background: #1F9E52;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 43, 78, .28);
+  transition: background-color .18s ease, transform .18s ease;
+}
+.wa-fab:hover { background: #17864333; background-color: #178643; transform: translateY(-2px); }
+
+@media (max-width: 620px) {
+  .wa-fab span { display: none; }
+  .wa-fab { padding: .95rem; }
+}
+
+.modal__panel--sm { width: min(480px, 100%); }
+
+.wa-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+.wa-user code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brand-deep);
+}
+
+.wa-steps { margin: 0 0 1.25rem; padding-left: 1.2rem; color: var(--ink); font-size: .97rem; }
+.wa-steps li { margin-bottom: .45rem; }
+
+.wa-note { font-size: .88rem; color: var(--muted); margin: 0; line-height: 1.55; }
+
+@media print { .wa-fab { display: none !important; } }
