@@ -79,18 +79,6 @@
         </span>
       </a>
 
-      <div class="header-actions">
-        <a class="header-tel" href="tel:+34881152730">
-          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-          <span>881 15 27 30</span>
-        </a>
-        <button class="btn btn--primary btn--sm header-cta" type="button" data-open-modal>Agenda tu cita</button>
-      </div>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
-        <span class="nav-toggle__bars" aria-hidden="true"></span> Menú
-      </button>
-
       <nav class="nav" id="menu-principal" aria-label="Navegación principal">
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -99,7 +87,23 @@
             <li><a href="donde-estamos.html">Dónde estamos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
+        <div class="nav__cta">
+          <button class="btn btn--primary btn--block" type="button" data-open-modal>Agenda tu cita</button>
+          <a class="nav__tel" href="tel:+34881152730">Llamar al 881 15 27 30</a>
+        </div>
       </nav>
+
+      <div class="header-actions">
+        <a class="header-tel" href="tel:+34881152730" aria-label="Llamar al 881 15 27 30">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          <span>881 15 27 30</span>
+        </a>
+        <button class="btn btn--primary btn--sm header-cta" type="button" data-open-modal>Agenda tu cita</button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="nav-toggle__txt">Menú</span>
+        </button>
+      </div>
     </div>
   </header>
 
