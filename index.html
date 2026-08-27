@@ -17,7 +17,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://www.notarialinaresrivas.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Notary",
+    "name": "Notaría Pedro García de los Huertos Sánchez",
+    "description": "Notaría en La Coruña. Herencias, testamentos, compraventas, hipotecas, poderes y sociedades.",
+    "url": "https://www.notarialinaresrivas.com/",
+    "telephone": "+34881152730",
+    "email": "info@notarialinaresrivas.com",
+    "image": "https://www.notarialinaresrivas.com/og-image.png",
+    "priceRange": "Arancel notarial fijado por el Real Decreto 1426/1989",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida Linares Rivas 27, 1º",
+      "postalCode": "15005",
+      "addressLocality": "La Coruña",
+      "addressRegion": "Galicia",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 43.3639, "longitude": -8.3993 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00", "closes": "15:00",
+        "validFrom": "2026-06-01", "validThrough": "2026-09-30" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "08:00", "closes": "14:00",
+        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+        "opens": "16:00", "closes": "18:00",
+        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday", "opens": "08:00", "closes": "15:00",
+        "validFrom": "2026-10-01", "validThrough": "2027-05-31" }
+    ]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23005EB8'/><text x='50' y='68' font-size='52' font-family='Georgia,serif' fill='white' text-anchor='middle'>P</text></svg>">
 </head>
 <body>
@@ -37,6 +78,14 @@
           <span class="brand__role">Notaría · La Coruña</span>
         </span>
       </a>
+
+      <div class="header-actions">
+        <a class="header-tel" href="tel:+34881152730">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          <span>881 15 27 30</span>
+        </a>
+        <button class="btn btn--primary btn--sm header-cta" type="button" data-open-modal>Agenda tu cita</button>
+      </div>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
         <span class="nav-toggle__bars" aria-hidden="true"></span> Menú
@@ -77,48 +126,81 @@
         <p class="lead" style="max-width:56ch;margin-bottom:2rem">Pincha en cualquier servicio para leer en detalle qué documentación necesitas y cómo funciona.</p>
         <div class="cards">
           <a class="card" href="que-hacemos.html#herencias">
-            Herencias
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Herencias</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Declaración de herederos, reparto y adjudicación. Podemos pedir por usted el Certificado de Últimas Voluntades.</span>
           </a>
           <a class="card" href="que-hacemos.html#testamentos">
-            Testamentos
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Testamentos</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">En el momento y con su copia en mano. Por menos de 50 euros. Con vecindad gallega, conforme al derecho de Galicia.</span>
           </a>
           <a class="card" href="que-hacemos.html#compraventas">
-            Compraventas
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Compraventas</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Comprobamos las cargas en el Registro de la Propiedad para que el comprador adquiera libre de ellas.</span>
           </a>
           <a class="card" href="que-hacemos.html#hipotecas">
-            Hipotecas
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Hipotecas</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Usted elige notario. Le explicamos gratuitamente todas las condiciones del préstamo antes de firmar.</span>
           </a>
           <a class="card" href="que-hacemos.html#cancelacion-hipotecas">
-            Cancelación de hipotecas
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Cancelación de hipotecas</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Cuando termine de pagar, su finca debe constar libre de la carga. La escritura cuesta menos de 100 euros.</span>
           </a>
           <a class="card" href="que-hacemos.html#bodas">
-            Bodas y divorcios
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Bodas y divorcios</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Sala para 24 personas que pueden adornar a su gusto. Divorcio de mutuo acuerdo sin hijos menores.</span>
           </a>
           <a class="card" href="que-hacemos.html#poderes">
-            Poderes
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Poderes</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Generales, especiales o para abogados. Se otorgan y se entregan en el mismo momento.</span>
           </a>
           <a class="card" href="que-hacemos.html#sociedades">
-            Sociedades
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Sociedades</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Constitución con NIF provisional en la firma, y todas las operaciones societarias posteriores.</span>
           </a>
           <a class="card" href="que-hacemos.html#gestion-escrituras">
-            Gestión de escrituras
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Gestión de escrituras</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Liquidación de impuestos e inscripción registral, sólo si nos lo encarga y con el coste informado por adelantado.</span>
           </a>
           <a class="card" href="que-hacemos.html#legitimaciones">
-            Legitimaciones y compulsas
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Legitimaciones y compulsas</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Legitimación de firmas y compulsa de fotocopias, normalmente en el acto o en 30 minutos.</span>
           </a>
           <a class="card" href="que-hacemos.html#videoconferencias">
-            Videoconferencias
-            <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            <span class="card__head">
+              <span class="card__title">Videoconferencias</span>
+              <span class="card__arrow" aria-hidden="true">&rarr;</span>
+            </span>
+            <span class="card__desc">Actos societarios, pólizas, poderes y cancelaciones desde la sede electrónica notarial.</span>
           </a>
         </div>
       </div>
@@ -218,7 +300,8 @@
 
         <div>
           <h2>Horario</h2>
-          <p>Lunes a jueves: 9:00 – 14:00 y 16:30 – 19:00<br>Viernes: 9:00 – 14:00</p>
+          <p style="margin-bottom:.6em"><strong>Verano</strong> (junio a septiembre): lunes a viernes, de 8:00 a 15:00</p>
+          <p><strong>Invierno</strong> (octubre a mayo): lunes a jueves, de 8:00 a 14:00 y de 16:00 a 18:00. Viernes, de 8:00 a 15:00</p>
         </div>
 
         <div>
@@ -233,7 +316,8 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© <span data-year>2026</span> Notaría Pedro García de los Huertos Sánchez</p>
+        <p>© <span data-year>2026</span> Notaría Pedro García de los Huertos Sánchez<br>
+          <span style="opacity:.75">Esta web es informativa y no sustituye al asesoramiento notarial del caso concreto.</span></p>
         <ul>
           <li><a href="aviso-legal.html">Aviso legal</a></li>
           <li><a href="privacidad.html">Política de privacidad</a></li>
