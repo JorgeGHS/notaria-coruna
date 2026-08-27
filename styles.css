@@ -743,3 +743,214 @@ body.is-locked { overflow: hidden; }
 .wa-note { font-size: .88rem; color: var(--muted); margin: 0; line-height: 1.55; }
 
 @media print { .wa-fab { display: none !important; } }
+
+/* ==========================================================================
+   REVISIÓN 3 — teléfono en cabecera, tarjetas con descripción,
+   derecho gallego, copias de escrituras
+   ========================================================================== */
+
+/* --------------------------------------------- Acciones de la cabecera --- */
+.header-actions { display: flex; align-items: center; gap: .75rem; margin-left: auto; }
+
+.header-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  text-decoration: none;
+  color: var(--brand-deep);
+  font-weight: 700;
+  font-size: .97rem;
+  white-space: nowrap;
+  padding: .4rem .5rem;
+  border-radius: var(--radius);
+}
+.header-tel:hover { color: var(--brand); background: var(--wash); }
+.header-tel svg { color: var(--brand); flex: none; }
+
+.btn--sm { padding: .6rem 1.05rem; font-size: .92rem; }
+
+/* En pantallas medias la cabecera se queda sin sitio: cae el botón primero */
+@media (max-width: 1080px) { .header-cta { display: none; } }
+@media (max-width: 900px)  { .header-actions { margin-left: 0; } }
+@media (max-width: 420px)  { .header-tel span { display: none; } }
+
+/* ------------------------------------ Tarjetas de servicio con texto --- */
+.cards { grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); }
+
+.card {
+  display: block;
+  align-items: initial;
+  padding: 1.25rem 1.35rem;
+}
+.card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.card__title { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; }
+.card__desc {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--sans);
+  font-size: .92rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------ Rejilla de apuntes --- */
+.grid-notas {
+  display: grid;
+  gap: 1.75rem 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.grid-notas article { border-top: 2px solid var(--seal); padding-top: 1rem; }
+.grid-notas h3 { font-size: 1.08rem; margin-bottom: .45rem; }
+.grid-notas p { font-size: .96rem; color: var(--ink); margin: 0; max-width: 46ch; }
+
+.nota-legal {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: .88rem;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* ==========================================================================
+   REVISIÓN 4 — Cabecera rehecha (sustituye a lo anterior de cabecera)
+   Escritorio: marca · menú · teléfono + botón
+   Móvil:      marca · teléfono (icono) · Menú → el botón vive dentro del menú
+   ========================================================================== */
+
+.site-header { border-bottom: 1px solid var(--line); }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 72px;
+  position: relative;
+}
+
+/* ------------------------------------------------------------- Marca --- */
+.brand { gap: .7rem; flex: none; }
+.brand__seal { width: 36px; height: 36px; }
+.brand__name {
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.brand__role { font-size: .66rem; letter-spacing: .14em; }
+
+/* -------------------------------------------------------------- Menú --- */
+.nav { margin-left: auto; }
+.nav ul { gap: .1rem; }
+.nav a { font-size: .93rem; padding: .5rem .6rem; }
+
+/* El bloque de llamada a la acción del menú sólo existe en móvil */
+.nav__cta { display: none; }
+
+/* ------------------------------------------------------------ Acciones --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex: none;
+  margin-left: 0;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--line);
+}
+
+.header-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+  color: var(--brand-deep);
+  font-weight: 700;
+  font-size: .95rem;
+  white-space: nowrap;
+  padding: .45rem .55rem;
+  border-radius: var(--radius);
+}
+.header-tel:hover { color: var(--brand); background: var(--wash); text-decoration: none; }
+.header-tel svg { color: var(--brand); flex: none; }
+
+.btn--sm { padding: .58rem 1.05rem; font-size: .9rem; white-space: nowrap; }
+
+/* Portátiles estrechos: cae el botón, se queda el teléfono */
+@media (max-width: 1180px) {
+  .header-inner { gap: 1rem; }
+  .nav a { font-size: .89rem; padding: .5rem .45rem; }
+  .header-cta { display: none; }
+}
+
+@media (max-width: 1000px) {
+  .header-tel span { display: none; }
+  .header-tel { padding: .5rem; }
+}
+
+/* --------------------------------------------------------------- Móvil --- */
+@media (max-width: 900px) {
+  .header-inner { min-height: 64px; gap: .75rem; }
+
+  .brand__seal { width: 32px; height: 32px; }
+  .brand__name { font-size: .92rem; }
+  .brand__role { font-size: .6rem; }
+
+  .header-actions {
+    margin-left: auto;
+    padding-left: 0;
+    border-left: 0;
+    gap: .35rem;
+  }
+
+  /* Teléfono como botón redondo de icono */
+  .header-tel {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+  }
+  .header-tel span { display: none; }
+  .header-cta { display: none; }
+
+  .nav-toggle {
+    display: inline-flex;
+    height: 42px;
+    padding: 0 .85rem;
+    gap: .5rem;
+    font-size: .88rem;
+    font-weight: 600;
+  }
+
+  .nav { margin-left: 0; }
+  .nav ul { padding: .5rem 1.25rem .25rem; }
+
+  /* El botón de cita vive dentro del menú desplegable */
+  .nav__cta {
+    display: block;
+    padding: .5rem 1.25rem 1.25rem;
+    border-top: 1px solid var(--line);
+    margin-top: .25rem;
+  }
+  .nav__tel {
+    display: block;
+    text-align: center;
+    margin-top: .8rem;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--brand-dark);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-toggle__txt { display: none; }
+  .nav-toggle { width: 42px; padding: 0; justify-content: center; }
+}
