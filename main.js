@@ -5,14 +5,28 @@
 (function () {
   'use strict';
 
-  /* --- CONFIGURACIÓN --------------------------------------------------
-     Sustituye la clave por la tuya de Web3Forms (https://web3forms.com,
-     gratis: pones tu email y te dan la clave por correo en 1 minuto).
-     Mientras ponga TU_ACCESS_KEY_AQUI, el formulario avisará en pantalla
-     de que aún no está conectado en lugar de fallar en silencio.
-  -------------------------------------------------------------------- */
-  var WEB3FORMS_KEY = 'TU_ACCESS_KEY_AQUI';
-  var ENDPOINT = 'https://api.web3forms.com/submit';
+  /* =====================================================================
+     CONFIGURACIÓN DEL FORMULARIO
+     ---------------------------------------------------------------------
+     Elige un proveedor y pega su dato. Sólo hay que tocar estas líneas.
+
+     PROVEEDOR = 'web3forms'  -> pon tu access key en CLAVE
+                                 (web3forms.com, gratis, 250 envíos/mes)
+     PROVEEDOR = 'formspree'  -> pon tu ID de formulario en CLAVE
+                                 (el de https://formspree.io/f/XXXXXXX)
+     PROVEEDOR = 'forminit'   -> pon la URL completa del endpoint en CLAVE
+
+     Mientras CLAVE siga como está, el formulario avisa en pantalla en vez
+     de fallar en silencio.
+     ===================================================================== */
+  var PROVEEDOR = 'web3forms';
+  var CLAVE = '1425008d-e092-4f19-81cd-2999d3cb1a70';
+
+  function endpoint() {
+    if (PROVEEDOR === 'formspree') return 'https://formspree.io/f/' + CLAVE;
+    if (PROVEEDOR === 'forminit') return CLAVE;
+    return 'https://api.web3forms.com/submit';
+  }
 
   /* ------------------------------------------------- Menú de navegación */
   var toggle = document.querySelector('.nav-toggle');
@@ -135,28 +149,32 @@
 
       if (form.querySelector('.honey input') && form.querySelector('.honey input').value) return;
 
-      if (WEB3FORMS_KEY === 'TU_ACCESS_KEY_AQUI') {
+      if (CLAVE === 'PEGA_AQUI_TU_CLAVE') {
         setStatus(status, 'error',
-          'El formulario todavía no está conectado. Añade tu clave de Web3Forms en assets/js/main.js.');
+          'El formulario todavía no está conectado. Añade la clave del proveedor en main.js.');
         return;
       }
 
       var data = Object.fromEntries(new FormData(form).entries());
-      data.access_key = WEB3FORMS_KEY;
       data.subject = form.getAttribute('data-subject') || 'Nuevo mensaje desde la web';
-      data.from_name = 'Web Notaría';
+      if (PROVEEDOR === 'web3forms') {
+        data.access_key = CLAVE;
+        data.from_name = 'Web Notaría';
+      }
 
       setStatus(status, 'sending', 'Enviando…');
       if (submit) submit.disabled = true;
 
-      fetch(ENDPOINT, {
+      fetch(endpoint(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data)
       })
         .then(function (r) { return r.json(); })
         .then(function (result) {
-          if (result.success) {
+          /* Web3Forms responde {success:true}; Formspree y Forminit devuelven
+             {ok:true} o el objeto enviado sin campo de error. */
+          if (result.success || result.ok || (!result.error && !result.errors)) {
             form.reset();
             setStatus(status, 'ok',
               'Hemos recibido tu solicitud. Te llamaremos para confirmar día y hora.');
