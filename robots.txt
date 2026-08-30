@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.notarialinaresrivas.com/sitemap.xml
