@@ -156,9 +156,9 @@
           <h2>Escríbenos</h2>
           <hr class="rule">
           <form data-form data-subject="Mensaje desde el formulario de contacto" novalidate>
-            <div class="form-grid">
+            <div class="form-grid form-grid--two">
               <div class="field">
-                <label for="c-nombre">Nombre</label>
+                <label for="c-nombre">Nombre y apellidos</label>
                 <input id="c-nombre" name="Nombre" type="text" autocomplete="name" required>
               </div>
               <div class="field">
@@ -166,6 +166,10 @@
                 <input id="c-email" name="Email" type="email" autocomplete="email" required>
               </div>
               <div class="field">
+                <label for="c-telefono">Teléfono móvil</label>
+                <input id="c-telefono" name="Teléfono" type="tel" autocomplete="tel" inputmode="tel" required>
+              </div>
+              <div class="field field--full">
                 <label for="c-mensaje">Mensaje</label>
                 <textarea id="c-mensaje" name="Mensaje" required></textarea>
               </div>
