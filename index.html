@@ -27,43 +27,97 @@
   <meta name="twitter:image" content="https://www.notarialinaresrivas.com/og-image.jpg">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Notary",
-    "name": "Notaría Pedro García de los Huertos Sánchez",
-    "description": "Notaría en La Coruña. Herencias, testamentos, compraventas, hipotecas, poderes y sociedades.",
-    "url": "https://www.notarialinaresrivas.com/",
-    "telephone": "+34881152730",
-    "email": "info@notarialinaresrivas.com",
-    "image": "https://www.notarialinaresrivas.com/og-image.png",
-    "priceRange": "Arancel notarial fijado por el Real Decreto 1426/1989",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Avenida Linares Rivas 27, 1º",
-      "postalCode": "15005",
-      "addressLocality": "La Coruña",
-      "addressRegion": "Galicia",
-      "addressCountry": "ES"
+{
+  "@context": "https://schema.org",
+  "@type": "Notary",
+  "@id": "https://www.notarialinaresrivas.com/#notaria",
+  "name": "Notaría Pedro García de los Huertos Sánchez",
+  "alternateName": [
+    "Notaría Linares Rivas",
+    "Notario Pedro García de los Huertos"
+  ],
+  "description": "Notaría en A Coruña (La Coruña), Avenida Linares Rivas 27. Herencias, testamentos, compraventas, hipotecas, poderes, sociedades y copias de escrituras.",
+  "url": "https://www.notarialinaresrivas.com/",
+  "telephone": "+34881152730",
+  "email": "info@notarialinaresrivas.com",
+  "image": "https://www.notarialinaresrivas.com/og-image.jpg",
+  "logo": "https://www.notarialinaresrivas.com/favicon-192.png",
+  "priceRange": "Arancel notarial oficial",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Linares Rivas 27, 1º",
+    "postalCode": "15005",
+    "addressLocality": "A Coruña",
+    "addressRegion": "Galicia",
+    "addressCountry": "ES"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Avenida+Linares+Rivas+27+15005+A+Coru%C3%B1a",
+  "areaServed": {
+    "@type": "City",
+    "name": "A Coruña"
+  },
+  "employee": {
+    "@type": "Person",
+    "@id": "https://www.notarialinaresrivas.com/#pedro",
+    "name": "Pedro García de los Huertos Sánchez",
+    "jobTitle": "Notario"
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Ilustre Colegio Notarial de Galicia",
+    "url": "https://www.notariosdegalicia.org/"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "15:00",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-09-30"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 43.3639, "longitude": -8.3993 },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00", "closes": "15:00",
-        "validFrom": "2026-06-01", "validThrough": "2026-09-30" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
-        "opens": "08:00", "closes": "14:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
-        "opens": "16:00", "closes": "18:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Friday", "opens": "08:00", "closes": "15:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" }
-    ]
-  }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "08:00",
+      "closes": "14:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "16:00",
+      "closes": "18:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:00",
+      "closes": "15:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
@@ -134,8 +188,8 @@
       <div class="hero__media" role="img" aria-label="La Coruña"></div>
       <div class="hero__veil"></div>
       <div class="wrap hero__inner">
-        <h1>Pedro García de los Huertos Sánchez</h1>
-        <p class="hero__role">Notario de La Coruña</p>
+        <h1><span class="hero__name">Pedro García de los Huertos Sánchez</span>
+          <span class="hero__role">Notario de La Coruña</span></h1>
         <div class="hero__actions">
           <button class="btn btn--primary" type="button" data-open-modal>Agenda tu cita</button>
           <a class="btn btn--light-ghost" href="que-hacemos.html">Ver todos los servicios</a>
@@ -151,77 +205,77 @@
         <hr class="rule">
         <p class="lead" style="max-width:56ch;margin-bottom:2rem">Pincha en cualquier servicio para leer en detalle qué documentación necesitas y cómo funciona.</p>
         <div class="cards">
-          <a class="card" href="que-hacemos.html#herencias">
+          <a class="card" href="herencias.html">
             <span class="card__head">
               <span class="card__title">Herencias</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Declaración de herederos, reparto y adjudicación. Podemos pedir por usted el Certificado de Últimas Voluntades.</span>
           </a>
-          <a class="card" href="que-hacemos.html#testamentos">
+          <a class="card" href="testamentos.html">
             <span class="card__head">
               <span class="card__title">Testamentos</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">En el momento y con su copia en mano, por menos de 50 euros. Le informamos de las limitaciones que puede tener.</span>
           </a>
-          <a class="card" href="que-hacemos.html#compraventas">
+          <a class="card" href="compraventas.html">
             <span class="card__head">
               <span class="card__title">Compraventas</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Comprobamos las cargas en el Registro de la Propiedad para que el comprador adquiera libre de ellas.</span>
           </a>
-          <a class="card" href="que-hacemos.html#hipotecas">
+          <a class="card" href="hipotecas.html">
             <span class="card__head">
               <span class="card__title">Hipotecas</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Usted elige notario. Le explicamos gratuitamente todas las condiciones del préstamo antes de firmar.</span>
           </a>
-          <a class="card" href="que-hacemos.html#cancelacion-hipotecas">
+          <a class="card" href="cancelacion-hipotecas.html">
             <span class="card__head">
               <span class="card__title">Cancelación de hipotecas</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Cuando termine de pagar, su finca debe constar libre de la carga. La escritura cuesta menos de 100 euros.</span>
           </a>
-          <a class="card" href="que-hacemos.html#bodas">
+          <a class="card" href="bodas.html">
             <span class="card__head">
               <span class="card__title">Bodas y divorcios</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Sala para 24 personas que pueden adornar a su gusto. Divorcio de mutuo acuerdo sin hijos menores.</span>
           </a>
-          <a class="card" href="que-hacemos.html#poderes">
+          <a class="card" href="poderes.html">
             <span class="card__head">
               <span class="card__title">Poderes</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Generales, especiales o para abogados. Se otorgan y se entregan en el mismo momento.</span>
           </a>
-          <a class="card" href="que-hacemos.html#sociedades">
+          <a class="card" href="sociedades.html">
             <span class="card__head">
               <span class="card__title">Sociedades</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Constitución con NIF provisional en la firma, y todas las operaciones societarias posteriores.</span>
           </a>
-          <a class="card" href="que-hacemos.html#gestion-escrituras">
+          <a class="card" href="gestion-escrituras.html">
             <span class="card__head">
               <span class="card__title">Gestión de escrituras</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Liquidación de impuestos e inscripción registral, sólo si nos lo encarga y con el coste informado por adelantado.</span>
           </a>
-          <a class="card" href="que-hacemos.html#legitimaciones">
+          <a class="card" href="legitimaciones.html">
             <span class="card__head">
               <span class="card__title">Legitimaciones y compulsas</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
             </span>
             <span class="card__desc">Legitimación de firmas y compulsa de fotocopias, normalmente en el acto o en 30 minutos.</span>
           </a>
-          <a class="card" href="que-hacemos.html#videoconferencias">
+          <a class="card" href="videoconferencias.html">
             <span class="card__head">
               <span class="card__title">Videoconferencias</span>
               <span class="card__arrow" aria-hidden="true">&rarr;</span>
@@ -321,6 +375,18 @@
             <li><a href="quienes-somos.html">Quiénes somos</a></li>
             <li><a href="donde-estamos.html">Dónde estamos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Servicios</h2>
+          <ul>
+            <li><a href="herencias.html">Herencias</a></li>
+            <li><a href="testamentos.html">Testamentos</a></li>
+            <li><a href="compraventas.html">Compraventas</a></li>
+            <li><a href="hipotecas.html">Hipotecas</a></li>
+            <li><a href="poderes.html">Poderes</a></li>
+            <li><a href="copias-de-escrituras.html">Copias de escrituras</a></li>
           </ul>
         </div>
 

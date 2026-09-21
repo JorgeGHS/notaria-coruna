@@ -954,3 +954,45 @@ body.is-locked { overflow: hidden; }
   .nav-toggle__txt { display: none; }
   .nav-toggle { width: 42px; padding: 0; justify-content: center; }
 }
+
+/* ==========================================================================
+   REVISIÓN 5 — Páginas de servicio (SEO)
+   ========================================================================== */
+
+/* Migas de pan sobre la cabecera azul de cada página */
+.breadcrumb {
+  font-size: .85rem;
+  color: #9FC6EC;
+  margin: 0 0 1.1rem;
+}
+.breadcrumb a { color: #D6E4F2; text-decoration: none; }
+.breadcrumb a:hover { color: #fff; text-decoration: underline; }
+.breadcrumb [aria-hidden] { margin: 0 .35rem; opacity: .7; }
+.breadcrumb [aria-current] { color: #fff; }
+
+/* Portada: el nombre y "Notario de La Coruña" forman un solo H1 */
+.hero h1 .hero__name { display: block; }
+.hero h1 .hero__role { display: block; margin: .6rem 0 1.5rem; line-height: 1.4; }
+
+/* Columna lateral de las páginas de servicio */
+aside > .panel + .panel { margin-top: 1rem; }
+.panel--links { background: #fff; }
+.link-list { list-style: none; margin: 0; padding: 0; }
+.link-list li { border-top: 1px solid var(--line); }
+.link-list li:first-child { border-top: 0; }
+.link-list a {
+  display: block;
+  padding: .7rem 0;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+.link-list a::after { content: " →"; color: var(--brand); }
+.link-list a:hover { color: var(--brand); }
+.link-list__all { margin: .75rem 0 0; font-size: .92rem; }
+
+.prose h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
+/* Pie: cinco columnas en escritorio */
+@media (min-width: 1000px) {
+  .footer-grid { grid-template-columns: 1.3fr 1fr 1fr 1.2fr 1.3fr; }
+}

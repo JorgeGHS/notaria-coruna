@@ -27,43 +27,97 @@
   <meta name="twitter:image" content="https://www.notarialinaresrivas.com/og-image.jpg">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Notary",
-    "name": "Notaría Pedro García de los Huertos Sánchez",
-    "description": "Notaría en La Coruña. Herencias, testamentos, compraventas, hipotecas, poderes y sociedades.",
-    "url": "https://www.notarialinaresrivas.com/",
-    "telephone": "+34881152730",
-    "email": "info@notarialinaresrivas.com",
-    "image": "https://www.notarialinaresrivas.com/og-image.png",
-    "priceRange": "Arancel notarial fijado por el Real Decreto 1426/1989",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Avenida Linares Rivas 27, 1º",
-      "postalCode": "15005",
-      "addressLocality": "La Coruña",
-      "addressRegion": "Galicia",
-      "addressCountry": "ES"
+{
+  "@context": "https://schema.org",
+  "@type": "Notary",
+  "@id": "https://www.notarialinaresrivas.com/#notaria",
+  "name": "Notaría Pedro García de los Huertos Sánchez",
+  "alternateName": [
+    "Notaría Linares Rivas",
+    "Notario Pedro García de los Huertos"
+  ],
+  "description": "Notaría en A Coruña (La Coruña), Avenida Linares Rivas 27. Herencias, testamentos, compraventas, hipotecas, poderes, sociedades y copias de escrituras.",
+  "url": "https://www.notarialinaresrivas.com/",
+  "telephone": "+34881152730",
+  "email": "info@notarialinaresrivas.com",
+  "image": "https://www.notarialinaresrivas.com/og-image.jpg",
+  "logo": "https://www.notarialinaresrivas.com/favicon-192.png",
+  "priceRange": "Arancel notarial oficial",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Linares Rivas 27, 1º",
+    "postalCode": "15005",
+    "addressLocality": "A Coruña",
+    "addressRegion": "Galicia",
+    "addressCountry": "ES"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Avenida+Linares+Rivas+27+15005+A+Coru%C3%B1a",
+  "areaServed": {
+    "@type": "City",
+    "name": "A Coruña"
+  },
+  "employee": {
+    "@type": "Person",
+    "@id": "https://www.notarialinaresrivas.com/#pedro",
+    "name": "Pedro García de los Huertos Sánchez",
+    "jobTitle": "Notario"
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Ilustre Colegio Notarial de Galicia",
+    "url": "https://www.notariosdegalicia.org/"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "15:00",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-09-30"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 43.3639, "longitude": -8.3993 },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00", "closes": "15:00",
-        "validFrom": "2026-06-01", "validThrough": "2026-09-30" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
-        "opens": "08:00", "closes": "14:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
-        "opens": "16:00", "closes": "18:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" },
-      { "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Friday", "opens": "08:00", "closes": "15:00",
-        "validFrom": "2026-10-01", "validThrough": "2027-05-31" }
-    ]
-  }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "08:00",
+      "closes": "14:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "16:00",
+      "closes": "18:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:00",
+      "closes": "15:00",
+      "validFrom": "2026-10-01",
+      "validThrough": "2027-05-31"
+    }
+  ]
+}
   </script>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
@@ -161,6 +215,18 @@
             <li><a href="quienes-somos.html">Quiénes somos</a></li>
             <li><a href="donde-estamos.html">Dónde estamos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Servicios</h2>
+          <ul>
+            <li><a href="herencias.html">Herencias</a></li>
+            <li><a href="testamentos.html">Testamentos</a></li>
+            <li><a href="compraventas.html">Compraventas</a></li>
+            <li><a href="hipotecas.html">Hipotecas</a></li>
+            <li><a href="poderes.html">Poderes</a></li>
+            <li><a href="copias-de-escrituras.html">Copias de escrituras</a></li>
           </ul>
         </div>
 
