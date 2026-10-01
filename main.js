@@ -94,13 +94,6 @@
     });
   });
 
-  document.querySelectorAll('[data-open-wa]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal(document.getElementById('modal-wa'));
-    });
-  });
-
   document.querySelectorAll('[data-close-modal]').forEach(function (btn) {
     btn.addEventListener('click', closeModal);
   });
@@ -113,28 +106,6 @@
       if (campo) campo.hidden = selTramite.value.indexOf('ipoteca') === -1;
     });
   }
-
-  /* Botón "Copiar" del nombre de usuario de WhatsApp */
-  document.querySelectorAll('[data-copy]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var el = document.getElementById(btn.getAttribute('data-copy'));
-      if (!el) return;
-      var texto = el.textContent.trim();
-      var hecho = function () {
-        var antes = btn.textContent;
-        btn.textContent = 'Copiado';
-        setTimeout(function () { btn.textContent = antes; }, 1800);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(texto).then(hecho, function () {});
-      } else {
-        var tmp = document.createElement('textarea');
-        tmp.value = texto; document.body.appendChild(tmp); tmp.select();
-        try { document.execCommand('copy'); hecho(); } catch (err) {}
-        document.body.removeChild(tmp);
-      }
-    });
-  });
 
   /* Permite abrir el formulario desde cualquier enlace: index.html#cita */
   if (window.location.hash === '#cita') openModal(document.getElementById('modal-cita'));

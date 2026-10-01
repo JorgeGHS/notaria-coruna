@@ -710,7 +710,8 @@ body.is-locked { overflow: hidden; }
   box-shadow: 0 6px 20px rgba(0, 43, 78, .28);
   transition: background-color .18s ease, transform .18s ease;
 }
-.wa-fab:hover { background: #17864333; background-color: #178643; transform: translateY(-2px); }
+.wa-fab { text-decoration: none; }
+.wa-fab:hover { background-color: #178643; color: #fff; transform: translateY(-2px); }
 
 @media (max-width: 620px) {
   .wa-fab span { display: none; }
@@ -719,26 +720,7 @@ body.is-locked { overflow: hidden; }
 
 .modal__panel--sm { width: min(480px, 100%); }
 
-.wa-user {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  background: var(--wash);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: .85rem 1rem;
-  margin-bottom: 1.25rem;
-}
-.wa-user code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--brand-deep);
-}
 
-.wa-steps { margin: 0 0 1.25rem; padding-left: 1.2rem; color: var(--ink); font-size: .97rem; }
-.wa-steps li { margin-bottom: .45rem; }
 
 .wa-note { font-size: .88rem; color: var(--muted); margin: 0; line-height: 1.55; }
 
