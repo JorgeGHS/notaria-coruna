@@ -217,7 +217,7 @@
         <div>
           <h2>Escríbenos</h2>
           <hr class="rule">
-          <form data-form data-subject="Mensaje desde el formulario de contacto" novalidate>
+          <form data-form data-subject="Mensaje desde el formulario de contacto">
             <div class="form-grid form-grid--two">
               <div class="field">
                 <label for="c-nombre">Nombre y apellidos</label>
@@ -346,7 +346,7 @@
       <h2 id="modal-titulo">Agenda tu cita</h2>
       <p class="modal__intro">Cuéntanos qué necesitas y te llamamos para darte día y hora. Si es un asunto urgente, lo priorizamos.</p>
 
-      <form data-form data-subject="Solicitud de cita desde la web" novalidate>
+      <form data-form data-subject="Solicitud de cita desde la web">
         <div class="field field--full" style="margin-bottom:1rem">
           <label for="cita-tramite">¿Qué trámite necesitas?</label>
           <select id="cita-tramite" name="Trámite" required>
@@ -376,8 +376,8 @@
             <input id="cita-apellidos" name="Apellidos" type="text" autocomplete="family-name" required>
           </div>
           <div class="field">
-            <label for="cita-dni">DNI / NIE</label>
-            <input id="cita-dni" name="DNI o NIE" type="text" required>
+            <label for="cita-dni">DNI, NIE o pasaporte <span class="hint">(opcional)</span></label>
+            <input id="cita-dni" name="DNI o NIE" type="text" autocomplete="off">
           </div>
           <div class="field">
             <label for="cita-telefono">Teléfono</label>

@@ -111,14 +111,64 @@
   if (window.location.hash === '#cita') openModal(document.getElementById('modal-cita'));
 
   /* -------------------------------------------------------- Formularios */
+  /* =====================================================================
+     VALIDACIÓN
+     Los campos ya llevan "required" en el HTML, pero hay que comprobarlo
+     antes de enviar: si no, se mandan formularios vacíos.
+     ===================================================================== */
+  function soloDigitos(v) { return (v || '').replace(/\D/g, ''); }
+
+  function revisaCampo(el) {
+    if (!el || el.name === 'botcheck' || el.type === 'checkbox' || el.type === 'hidden') return;
+    el.setCustomValidity('');
+    var v = (el.value || '').trim();
+    if (!v) return;                     /* de los vacíos ya se ocupa "required" */
+    if (el.type === 'tel') {
+      if (soloDigitos(v).length < 9) el.setCustomValidity('Escriba un teléfono con al menos 9 cifras.');
+    } else if (el.tagName === 'TEXTAREA' && el.required) {
+      if (v.length < 10) el.setCustomValidity('Cuéntenos un poco más para poder ayudarle.');
+    } else if (el.type === 'text' && el.required) {
+      if (v.length < 2 || !/[a-záéíóúüñ]/i.test(v)) el.setCustomValidity('Revise este dato.');
+    }
+  }
+
+  function esValido(form) {
+    var campos = form.querySelectorAll('input, select, textarea');
+    for (var i = 0; i < campos.length; i++) {
+      var el = campos[i];
+      if (el.name !== 'botcheck' && el.type !== 'checkbox' && typeof el.value === 'string') {
+        el.value = el.value.trim();     /* un espacio no cuenta como respuesta */
+      }
+      revisaCampo(el);
+    }
+    if (form.checkValidity()) return true;
+    var fallo = form.querySelector(':invalid');
+    if (fallo) { try { fallo.focus(); } catch (err) {} }
+    form.reportValidity();              /* el navegador señala el campo */
+    return false;
+  }
+
   document.querySelectorAll('form[data-form]').forEach(function (form) {
     var status = form.querySelector('.form-status');
     var submit = form.querySelector('button[type="submit"]');
 
+    form.addEventListener('input', function (e) { e.target.setCustomValidity(''); });
+    form.addEventListener('change', function (e) { e.target.setCustomValidity(''); });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      if (form.querySelector('.honey input') && form.querySelector('.honey input').value) return;
+      /* Campo trampa: si viene relleno es un bot. Le damos por bueno sin enviar. */
+      var trampa = form.querySelector('.honey input');
+      if (trampa && trampa.value) {
+        setStatus(status, 'ok', 'Hemos recibido tu mensaje.');
+        return;
+      }
+
+      if (!esValido(form)) {
+        setStatus(status, 'error', 'Faltan datos. Revise los campos señalados y vuelva a enviarlo.');
+        return;
+      }
 
       if (CLAVE === 'PEGA_AQUI_TU_CLAVE') {
         setStatus(status, 'error',
